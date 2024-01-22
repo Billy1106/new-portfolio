@@ -1,11 +1,6 @@
 <template>
-  <v-container fluid class="about" id="about">
-    <v-row
-      justify="center"
-      :style="{
-        height: '90vh',
-      }"
-    >
+  <v-container fluid class="about">
+    <v-row justify="center" class="h-screen">
       <v-col align-self="center">
         <v-col>
           <h6 class="text-center">Get To Know More</h6>
@@ -24,47 +19,43 @@
           <v-col cols="12" md="8" class="my-auto">
             <v-row>
               <v-col cols="12" md="6">
-                <v-card class="text-center" variant="outlined" height="150">
+                <v-card class="text-center" variant="outlined">
                   <v-card-title>
                     <v-icon>mdi-school</v-icon>
                     <h4>Education</h4>
                   </v-card-title>
-                  <v-card-subtitle>
+                  <v-card-text>
                     <h4>University of British Columbia</h4>
-                  </v-card-subtitle>
-                  <v-card-subtitle>
                     <h4>B.Sc. Computer Science 2024</h4>
-                  </v-card-subtitle>
+                  </v-card-text>
                 </v-card>
               </v-col>
               <v-col cols="12" md="6">
-                <v-card class="text-center" variant="outlined" height="150">
+                <v-card class="text-center" variant="outlined">
                   <v-card-title>
                     <v-icon>mdi-file-certificate</v-icon>
                     <h4>Experience</h4>
                   </v-card-title>
-                  <v-card-subtitle>
+                  <v-card-text>
                     <h4>4+ years</h4>
-                  </v-card-subtitle>
-                  <v-card-subtitle>
                     <h4>Full Stack Development</h4>
-                  </v-card-subtitle>
+                  </v-card-text>
                 </v-card>
               </v-col>
             </v-row>
             <v-col cols="12" md="12">
               <v-card flat>
                 <v-card-text>
-                  <h4 style="line-height: 2;">
-                    Ryota is is a Japanese software engineer based in Vancouver, with passions in
-                    developing high-performance REST APIs using Golang and
-                    creating advanced data retrieval systems using technologies
-                    like VectorDB and AWS Redshift. His proficiency extends to
-                    front-end development, where he excels in building
-                    user-friendly interfaces with Nuxt3 and TypeScript. He is adept
-                    in Agile and CI/CD methodologies, with significant
-                    experience in enhancing user engagement and application
-                    security.
+                  <h4 style="line-height: 2">
+                    Ryota is is a Japanese software engineer based in Vancouver,
+                    with passions in developing high-performance REST APIs using
+                    Golang and creating advanced data retrieval systems using
+                    technologies like VectorDB and AWS Redshift. His proficiency
+                    extends to front-end development, where he excels in
+                    building user-friendly interfaces with Nuxt3 and TypeScript.
+                    He is adept in Agile and CI/CD methodologies, with
+                    significant experience in enhancing user engagement and
+                    application security.
                   </h4>
                 </v-card-text>
               </v-card>
@@ -81,6 +72,6 @@
 <style scoped>
 .about {
   width: 80vw;
-  height: 100vh;
+  margin-bottom: 15rem;
 }
 </style>
