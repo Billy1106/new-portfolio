@@ -49,6 +49,7 @@ defineComponent({
 <style scoped >
 .home {
   height: 100vh;
+  width: 100vw;
   .header {
     padding: 50px;
   }

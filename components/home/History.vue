@@ -1,8 +1,8 @@
 <template>
-  <v-container fluid class="about" id="experience">
+  <v-container fluid class="h-screen history" id="experience">
     <h6 class="text-center">Explore My</h6>
     <h1 class="text-center pb-10">Experience</h1>
-    <v-timeline direction="vertical">
+    <v-timeline direction="vertical" side="end" class="overflow-hidden ml-n9">
       <v-timeline-item
         v-for="(event, index) in eventLists"
         :key="index"
@@ -71,7 +71,7 @@ const eventLists: Event[] = [
   //     organization: "Twilight Traveler Corp",
   //     position: "Volunteer",
   //     description:
-  //       "Delivering a 1-hour presentation about the universities in Canada to classes of 20-30 Japanese high school students who are interested in studying abroad after their graduation.",
+  //       "Delivering a 1-hour presentation history the universities in Canada to classes of 20-30 Japanese high school students who are interested in studying abroad after their graduation.",
   //   },
   {
     id: 5,
@@ -115,8 +115,8 @@ const gameExperiences = [
 </script>
 
 <style scoped>
-.about {
-  width: 80vw;
+.history {
+  max-width: 800px;
   font-weight: 560;
 }
 </style>

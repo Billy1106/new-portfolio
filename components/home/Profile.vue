@@ -15,12 +15,12 @@
           <h3>Software Engineer</h3>
         </v-row>
         <v-row justify="center">
-          <v-col cols="12" md="5">
+          <v-col cols="12" md="6" lg="4">
             <v-btn variant="outlined">
               <span>Download CV</span>
             </v-btn>
           </v-col>
-          <v-col cols="12" md="5">
+          <v-col cols="12" md="6" lg="4">
             <v-btn variant="tonal" @click="scroll('contact')">
               <span>Contact Info</span>
             </v-btn>
@@ -66,11 +66,10 @@ const scroll = (refName: string) => {
   const element = document.getElementById(refName);
   element?.scrollIntoView({ behavior: "smooth", block: "start" });
 };
-
 </script>
 
 <style scoped>
 .profile {
-  height: 100vh;
+
 }
 </style>

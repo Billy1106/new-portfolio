@@ -20,7 +20,7 @@ export const projectList: Project[] = [
     id: 6,
     title: "TreasureGunner",
     description:
-      "Developed a top-down 2D shooting game in C++. The project, which was part of a course, was awarded a 98% grade for its innovative gameplay and technical execution.",
+      "Developed a top-down 2D shooting game in C++. The project was awarded a 98% grade for its innovative gameplay and technical execution.",
     img: "/images/project/treasure.jpeg",
     techs: [],
     link: "https://zenith08.itch.io/treasure-gunner",
@@ -29,7 +29,7 @@ export const projectList: Project[] = [
     id: 5,
     title: "NativeJobs",
     description:
-      "Engineered an online job search mobile application using React Native. Implemented features like job listings, application management, and real-time notifications, catering to a growing user base.",
+      "Engineered an online job search mobile application using React Native. Implemented features like job listings, application management, catering to a growing user base.",
     img: "/images/project/native.png",
     techs: [],
     link: "https://github.com/Billy1106/native-jobs",
