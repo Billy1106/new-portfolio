@@ -14,6 +14,7 @@
               width="300"
               class="mx-auto"
               cover
+              eager
             />
           </v-col>
           <v-col cols="12" md="8" class="my-auto">

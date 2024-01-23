@@ -8,6 +8,7 @@
           height="200"
           aspect-ratio="4/3"
           class="transition-fast"
+          eager
         />
       </v-col>
 
