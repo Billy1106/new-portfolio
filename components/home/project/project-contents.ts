@@ -1,38 +1,52 @@
-interface Project {
+export interface Project {
   id: number;
   title: string;
   description: string;
   img: string;
   techs: any[];
-  link: string;
+  sourceLink: string;
+  demoLink: string;
 }
 export const projectList: Project[] = [
-    {
-        id: 7,
-        title: "JetLag2.0",
-        description:
-          "JetLag is a time difference calculator app that allows users to see the entered time at different timezone by inutition.",
-        img: "/images/project/jetlag.png",
-        techs: [],
-        link: "https://github.com/Billy1106/JetLag2.0",
-      },
+  {
+    id: 8,
+    title: "EasyKanban",
+    description:
+      "A full-stack web app to enhance task and project management.",
+    img: "/images/project/EasyKanban.png",
+    techs: [],
+    sourceLink: "https://github.com/Billy1106/EasyKanban",
+    demoLink: "https://main.d39bs8224nr2i8.amplifyapp.com/",
+  },
+  {
+    id: 7,
+    title: "JetLag2.0",
+    description:
+      "JetLag is a time difference calculator app that allows users to see the entered time at different timezone by inutition.",
+    img: "/images/project/jetlag.png",
+    techs: [],
+    sourceLink: "https://github.com/Billy1106/JetLag2.0",
+    demoLink: "https://billy1106.github.io/JetLag2.0/",
+  },
   {
     id: 6,
     title: "TreasureGunner",
     description:
-      "Developed a top-down 2D shooting game in C++. The project was awarded a 98% grade for its innovative gameplay and technical execution.",
+      "A top-down 2D shooting game in C++, awarded a 98% grade for its innovative gameplay and technical execution.",
     img: "/images/project/treasure.jpeg",
     techs: [],
-    link: "https://zenith08.itch.io/treasure-gunner",
+    sourceLink: "https://github.com/CPSC427-2023-Team-10/Treasure-Gunner",
+    demoLink: "https://zenith08.itch.io/treasure-gunner",
   },
   {
     id: 5,
     title: "NativeJobs",
     description:
-      "Engineered an online job search mobile application using React Native. Implemented features like job listings, application management, catering to a growing user base.",
+      "An online job search mobile application using React Native.",
     img: "/images/project/native.png",
     techs: [],
-    link: "https://github.com/Billy1106/native-jobs",
+    sourceLink: "https://github.com/Billy1106/native-jobs",
+    demoLink: "",
   },
   {
     id: 1,
@@ -41,7 +55,8 @@ export const projectList: Project[] = [
       "TODO list web application that you can add, remove, and check the completed task easily.",
     img: "/images/project/YourTodo.jpeg",
     techs: [],
-    link: "https://github.com/Billy1106/YourTodo",
+    sourceLink: "https://github.com/Billy1106/YourTodo",
+    demoLink: "https://my-todo-391e5.web.app/",
   },
   {
     id: 2,
@@ -50,7 +65,8 @@ export const projectList: Project[] = [
       "LaggyZoom that creates intentional lags and image blur to make an execuse to turn off your camera while zooming.",
     img: "/images/project/VideoGenerator.png",
     techs: [],
-    link: "https://github.com/Billy1106/portofolio",
+    sourceLink: "https://github.com/Billy1106/portofolio",
+    demoLink: "",
   },
   {
     id: 3,
@@ -59,7 +75,8 @@ export const projectList: Project[] = [
       "A DNS client capable of resolving DNS queries of type A, AAAA, MX, NS, and CNAME. Built during the university course.",
     img: "/images/project/coming_soon.jpg",
     techs: [],
-    link: "https://github.com/Billy1106/DNSLookUpTool-CPSC317-",
+    sourceLink: "https://github.com/Billy1106/DNSLookUpTool-CPSC317-",
+    demoLink: "",
   },
   {
     id: 4,
@@ -68,7 +85,8 @@ export const projectList: Project[] = [
       "Analyses the rate of comments on YouTube live stream and generate clips.",
     img: "/images/project/coming_soon.jpg",
     techs: [],
-    link: "https://github.com/Billy1106",
+    sourceLink: "https://github.com/Billy1106",
+    demoLink: "",
   },
   {
     id: 0,
@@ -76,6 +94,7 @@ export const projectList: Project[] = [
     description: "My first portfolio website created by using React.js.",
     img: "/images/project/my-portfolio.jpg",
     techs: [],
-    link: "https://github.com/Billy1106/portofolio",
+    sourceLink: "https://github.com/Billy1106/portofolio",
+    demoLink: "https://billy1106.github.io/portfolio/",
   },
 ];
