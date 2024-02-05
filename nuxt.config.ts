@@ -31,11 +31,11 @@ export default defineNuxtConfig({
     ssr: true,
     runtimeConfig: {
         public: {
-            AWS_S3_ACCESS_ID: process.env.AWS_S3_ACCESS_ID,
-            AWS_S3_SECRET_KEY: process.env.AWS_S3_SECRET_KEY,
-            AWS_S3_BUCKET_NAME: process.env.AWS_S3_BUCKET_NAME,
-            AWS_S3_REGION: process.env.AWS_S3_REGION,
-            AWS_S3_RESUME_KEY: process.env.AWS_S3_RESUME_KEY,
+            AWS_S3_ACCESS_ID: process.env.S3_ACCESS_ID,
+            AWS_S3_SECRET_KEY: process.env.S3_SECRET_KEY,
+            AWS_S3_BUCKET_NAME: process.env.S3_BUCKET_NAME,
+            AWS_S3_REGION: process.env.S3_REGION,
+            AWS_S3_RESUME_KEY: process.env.S3_RESUME_KEY,
         }
     }
 })
