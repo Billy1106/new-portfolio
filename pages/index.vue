@@ -8,9 +8,9 @@
       <div id="about">
         <About />
       </div>
-      <!-- <div id="skills">
+      <div id="skills">
         <Experience />
-      </div> -->
+      </div>
       <div id="project">
         <Projects />
       </div>

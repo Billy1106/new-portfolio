@@ -50,50 +50,57 @@
 <script setup lang="ts">
 import ProjectCard from "@/components/home/project/ProjectCard.vue";
 import { defineComponent, computed, ref } from "vue";
-import { projectList } from "@/components/home/project/project-contents";
-
-const img = ref("");
-
+import {
+  projectList,
+  type Project,
+} from "@/components/home/project/project-contents";
 defineComponent({
   components: {
     ProjectCard,
   },
 });
 
+const img = ref("");
 const screenWidth = ref(window?.innerWidth || 900);
-onMounted(async () => {
+const groupedProject = ref<Project[][]>([[]]);
+
+onMounted(() => {
   window.addEventListener("resize", () => {
     screenWidth.value = window.innerWidth;
+    setProject();
   });
+  setProject();
+
 });
 
-const groupedProject = computed(() => {
+const setProject = () => {
   let perGroup;
- if (screenWidth.value < 960) {
-    perGroup = 2;
-  } else if (screenWidth.value < 1300) {
-    // Medium screens
-    perGroup = 3;
-  }
-  else if (screenWidth.value < 1600) {
-    // Large screens
-    perGroup = 6;
-  } else {
-    // Large screens
-    perGroup = 6;
-  }
+    if (screenWidth.value < 960) {
+      perGroup = 2;
+    } else if (screenWidth.value < 1300) {
+      // Medium screens
+      perGroup = 3;
+    } else if (screenWidth.value < 1600) {
+      // Large screens
+      perGroup = 6;
+    } else {
+      // Large screens
+      perGroup = 6;
+    }
 
-  const grouped = [];
-  for (let i = 0; i < projectList.length; i += perGroup) {
-    grouped.push(projectList.slice(i, i + perGroup));
-  }
-  return grouped;
-});
+    const grouped = [];
+    for (let i = 0; i < projectList.length; i += perGroup) {
+      grouped.push(projectList.slice(i, i + perGroup));
+    }
+    groupedProject.value = grouped;
+  screenWidth.value = window.innerWidth;
+}
 </script>
 
 <style scoped>
 .project {
   margin-bottom: 15rem;
+  background-color: #f5f5f5;
 }
 
 .project-card {
