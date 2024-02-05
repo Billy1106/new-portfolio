@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="h-screen history" id="experience">
+  <v-container fluid class="history" id="experience">
     <h6 class="text-center">Explore My</h6>
     <h1 class="text-center pb-10">Experience</h1>
     <v-timeline direction="vertical" side="end" class="overflow-hidden ml-n9">
