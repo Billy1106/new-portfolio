@@ -14,6 +14,7 @@
               width="300"
               class="mx-auto"
               cover
+              eager
             />
           </v-col>
           <v-col cols="12" md="8" class="my-auto">
@@ -45,7 +46,7 @@
             </v-row>
             <v-col cols="12" md="12">
               <v-card flat>
-                <v-card-text>
+                <v-card-text class="description-text">
                   <h4 style="line-height: 2">
                     Ryota is is a Japanese software engineer based in Vancouver,
                     with passions in developing high-performance REST APIs using
@@ -73,5 +74,13 @@
 .about {
   width: 80vw;
   margin-bottom: 15rem;
+  .description-text h4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+  }
 }
 </style>

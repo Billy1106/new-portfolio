@@ -1,5 +1,12 @@
 <template>
   <v-container fluid class="project">
+    <v-img
+      :src="img"
+      height="200"
+      aspect-ratio="4/3"
+      class="transition-fast"
+      eager
+    />
     <v-row>
       <v-col align-self="center">
         <h6 class="text-center">Browse My Recent</h6>
@@ -24,11 +31,11 @@
             <v-col
               cols="12"
               md="6"
-              lg="6"
-              xl="6"
+              lg="4"
+              xl="4"
               v-for="(project, projIndex) in group"
               :key="'project-' + projIndex"
-              class="mx-auto"
+              class="mx-auto my-5"
               align-self="center"
             >
               <ProjectCard :project="project" />
@@ -45,14 +52,16 @@ import ProjectCard from "@/components/home/project/ProjectCard.vue";
 import { defineComponent, computed, ref } from "vue";
 import { projectList } from "@/components/home/project/project-contents";
 
+const img = ref("");
+
 defineComponent({
   components: {
     ProjectCard,
   },
 });
 
-const screenWidth = ref(window?.innerWidth);
-onMounted(() => {
+const screenWidth = ref(window?.innerWidth || 900);
+onMounted(async () => {
   window.addEventListener("resize", () => {
     screenWidth.value = window.innerWidth;
   });
@@ -60,15 +69,18 @@ onMounted(() => {
 
 const groupedProject = computed(() => {
   let perGroup;
-  if (screenWidth.value < 800) {
-    // Small screens
-    perGroup = 1;
-  } else if (screenWidth.value < 1200) {
-    // Medium screens
+ if (screenWidth.value < 960) {
     perGroup = 2;
+  } else if (screenWidth.value < 1300) {
+    // Medium screens
+    perGroup = 3;
+  }
+  else if (screenWidth.value < 1600) {
+    // Large screens
+    perGroup = 6;
   } else {
     // Large screens
-    perGroup = 4;
+    perGroup = 6;
   }
 
   const grouped = [];
