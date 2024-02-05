@@ -48,7 +48,7 @@
 <script setup lang="ts">
 import Cube from "@/components/home/profile/Cube.vue";
 import { GetObjectCommand, S3Client } from "@aws-sdk/client-s3";
-const runtimeConfig = useRuntimeConfig()
+const runtimeConfig = useRuntimeConfig().public
 
 const objectURL = ref<string>("");
 const client = new S3Client({
@@ -68,7 +68,7 @@ defineComponent({
 onMounted(async () => {
   const command = new GetObjectCommand({
     Bucket:runtimeConfig.AWS_S3_BUCKET_NAME,
-    Key: runtimeConfig.AWS_S3_RESUME_KEY,
+    Key: runtimeConfig.AWS_S3_RESUME_KEY as string,
   });
 
   try {
