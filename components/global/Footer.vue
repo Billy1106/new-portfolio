@@ -15,6 +15,11 @@
             >
           </v-col>
           <v-col cols="12" md="2" class="text-center">
+            <v-btn flat text @click="scroll('skills')" class="text-black button"
+              >Skills</v-btn
+            >
+          </v-col>
+          <v-col cols="12" md="2" class="text-center">
             <v-btn
               flat
               text
@@ -62,7 +67,7 @@ const scroll = (refName) => {
 .footer {
   .button {
     color: #000000;
-    font-size: 20px;
+    font-size: 15px;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
   }

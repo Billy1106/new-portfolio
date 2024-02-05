@@ -19,6 +19,9 @@
         <v-btn text @click="scroll('about')" class="text-black button"
           >About</v-btn
         >
+        <v-btn text @click="scroll('skills')" class="text-black button"
+          >Skills</v-btn
+        >
         <v-btn text @click="scroll('project')" class="text-black button"
           >Projects</v-btn
         >

@@ -27,10 +27,10 @@
 
         <v-card-actions class="justify-center pb-4">
           <v-btn :href="project.sourceLink" target="_blank" dark class="mr-2">
-            <v-icon left>mdi-github</v-icon> Source
+            <v-icon>mdi-github</v-icon> Source
           </v-btn>
-          <v-btn :href="project.demoLink" target="_blank" dark>
-            <v-icon right>mdi-web</v-icon> Demo
+          <v-btn v-if="project.demoLink" :href="project.demoLink" target="_blank" dark>
+            <v-icon>mdi-web</v-icon> Demo
           </v-btn>
         </v-card-actions>
       </v-col>
