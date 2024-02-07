@@ -57,6 +57,7 @@
 </template>
 
 <script setup>
+import { useGtag } from "vue-gtag-next";
 const { gtag } = useGtag();
 const scroll = (refName) => {
   const element = document.getElementById(refName);

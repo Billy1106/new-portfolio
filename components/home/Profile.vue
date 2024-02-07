@@ -15,8 +15,18 @@
           <h3>Software Engineer</h3>
         </v-row>
         <v-row justify="center" class="ga-6">
-          <v-btn :href="objectURL" target="_blank"  text="Download CV" variant="outlined"  @click="sendEvent" />
-            <v-btn variant="tonal" text="Contact Info" @click="scroll('contact')"/>
+          <v-btn
+            :href="objectURL"
+            target="_blank"
+            text="Download CV"
+            variant="outlined"
+            @click="sendEvent"
+          />
+          <v-btn
+            variant="tonal"
+            text="Contact Info"
+            @click="scroll('contact')"
+          />
         </v-row>
         <v-row justify="center">
           <v-col cols="12" md="2">
@@ -48,8 +58,9 @@
 <script setup lang="ts">
 import Cube from "@/components/home/profile/Cube.vue";
 import { GetObjectCommand, S3Client } from "@aws-sdk/client-s3";
-const runtimeConfig = useRuntimeConfig().public
-const {gtag} = useGtag();
+import { useGtag } from "vue-gtag-next";
+const runtimeConfig = useRuntimeConfig().public;
+const { gtag } = useGtag();
 
 const objectURL = ref<string>("");
 const client = new S3Client({
@@ -68,7 +79,7 @@ defineComponent({
 
 onMounted(async () => {
   const command = new GetObjectCommand({
-    Bucket:runtimeConfig.AWS_S3_BUCKET_NAME,
+    Bucket: runtimeConfig.AWS_S3_BUCKET_NAME,
     Key: runtimeConfig.AWS_S3_RESUME_KEY as string,
   });
 
@@ -102,7 +113,6 @@ const sendEvent = () => {
     event_category: "download",
   });
 };
-
 </script>
 
 <style scoped>

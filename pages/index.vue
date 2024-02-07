@@ -26,14 +26,15 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent } from 'vue'
-import Header from '@/components/global/Header.vue';
-import About from '@/components/home/About.vue';
-import Experience from '@/components/home/Experience.vue';
-import Projects from '@/components/home/Projects.vue';
-import History from '@/components/home/History.vue';
-import Profile from '@/components/home/Profile.vue';
-import Footer from '@/components/global/Footer.vue';
+import { defineComponent } from "vue";
+import Header from "@/components/global/Header.vue";
+import About from "@/components/home/About.vue";
+import Experience from "@/components/home/Experience.vue";
+import Projects from "@/components/home/Projects.vue";
+import History from "@/components/home/History.vue";
+import Profile from "@/components/home/Profile.vue";
+import Footer from "@/components/global/Footer.vue";
+import { useGtag } from "vue-gtag-next";
 defineComponent({
   components: {
     Header,
@@ -42,18 +43,16 @@ defineComponent({
     Projects,
     History,
     Profile,
-    Footer
-  }
-})
-const {gtag} = useGtag()
-gtag('event', 'page_view', {
-  app_name: 'Portfolio',
-  screen_name: 'Home'
-
-})
-
+    Footer,
+  },
+});
+const { gtag } = useGtag();
+gtag("event", "page_view", {
+  app_name: "Portfolio",
+  screen_name: "Home",
+});
 </script>
-<style scoped >
+<style scoped>
 .home {
   height: 100vh;
   width: 100vw;

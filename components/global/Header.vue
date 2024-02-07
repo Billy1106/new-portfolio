@@ -66,6 +66,7 @@
 import { ref } from "vue";
 
 const drawer = ref(false);
+import { useGtag } from "vue-gtag-next";
 const { gtag } = useGtag();
 
 const scroll = (refName) => {

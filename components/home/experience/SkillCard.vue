@@ -4,7 +4,10 @@
     variant="outlined"
     @mouseover="hover = true"
     @mouseleave="hover = false"
-    @click="dialog = true; sendEvent()"
+    @click="
+      dialog = true;
+      sendEvent();
+    "
   >
     <v-dialog
       v-model="dialog"
@@ -41,6 +44,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+import { useGtag } from "vue-gtag-next";
 const { gtag } = useGtag();
 
 const Props = defineProps({
@@ -67,7 +71,6 @@ const sendEvent = () => {
     event_label: Props.title,
   });
 };
-
 </script>
 
 <style scoped>
