@@ -102,14 +102,14 @@ onMounted(async () => {
 const scroll = (refName: string) => {
   const element = document.getElementById(refName);
   element?.scrollIntoView({ behavior: "smooth", block: "start" });
-  event("event", "click", {
+  event("click", {
     event_category: "scroll",
     event_label: refName,
   });
 };
 
 const sendEvent = () => {
-  event("event", "click", {
+  event("click", {
     event_category: "download",
   });
 };
