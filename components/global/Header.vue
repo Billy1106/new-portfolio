@@ -66,11 +66,20 @@
 import { ref } from "vue";
 
 const drawer = ref(false);
+const { gtag } = useGtag();
 
 const scroll = (refName) => {
   drawer.value = false; // Close the drawer when a link is clicked
   const element = document.getElementById(refName);
   element.scrollIntoView({ behavior: "smooth", block: "start" });
+  sendEvent(refName);
+};
+
+const sendEvent = (refName) => {
+  gtag("event", "click", {
+    event_category: "scroll",
+    event_label: refName,
+  });
 };
 </script>
 

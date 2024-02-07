@@ -4,7 +4,7 @@
     variant="outlined"
     @mouseover="hover = true"
     @mouseleave="hover = false"
-    @click="dialog = true"
+    @click="dialog = true; sendEvent()"
   >
     <v-dialog
       v-model="dialog"
@@ -41,8 +41,9 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
+const { gtag } = useGtag();
 
-defineProps({
+const Props = defineProps({
   title: {
     type: String,
     required: true,
@@ -59,6 +60,14 @@ defineProps({
 
 const hover = ref(false);
 const dialog = ref(false);
+
+const sendEvent = () => {
+  gtag("event", "click", {
+    event_category: "open_skill",
+    event_label: Props.title,
+  });
+};
+
 </script>
 
 <style scoped>
