@@ -47,9 +47,11 @@ defineComponent({
   },
 });
 const { event } = useGtag();
-event("page_view", {
-  app_name: "Portfolio",
-  screen_name: "Home",
+onMounted(() => {
+  event("page_view", {
+    app_name: "Portfolio",
+    screen_name: "Home",
+  });
 });
 </script>
 <style scoped>

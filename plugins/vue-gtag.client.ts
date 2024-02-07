@@ -7,5 +7,4 @@ export default defineNuxtPlugin((nuxtApp) => {
       id: config.GOOGLE_ANALYTICS_ID as string,
     },
   });
-  trackRouter(useRouter());
 });
