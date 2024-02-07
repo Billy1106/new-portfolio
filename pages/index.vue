@@ -46,8 +46,8 @@ defineComponent({
     Footer,
   },
 });
-const { gtag } = useGtag();
-gtag("event", "page_view", {
+const { event } = useGtag();
+event("page_view", {
   app_name: "Portfolio",
   screen_name: "Home",
 });

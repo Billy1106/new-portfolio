@@ -45,7 +45,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useGtag } from "vue-gtag-next";
-const { gtag } = useGtag();
+const { event } = useGtag();
 
 const Props = defineProps({
   title: {
@@ -66,7 +66,7 @@ const hover = ref(false);
 const dialog = ref(false);
 
 const sendEvent = () => {
-  gtag("event", "click", {
+  event("click", {
     event_category: "open_skill",
     event_label: Props.title,
   });

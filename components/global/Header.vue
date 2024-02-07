@@ -67,7 +67,7 @@ import { ref } from "vue";
 
 const drawer = ref(false);
 import { useGtag } from "vue-gtag-next";
-const { gtag } = useGtag();
+const { event } = useGtag();
 
 const scroll = (refName) => {
   drawer.value = false; // Close the drawer when a link is clicked
@@ -77,7 +77,7 @@ const scroll = (refName) => {
 };
 
 const sendEvent = (refName) => {
-  gtag("event", "click", {
+  event("click", {
     event_category: "scroll",
     event_label: refName,
   });

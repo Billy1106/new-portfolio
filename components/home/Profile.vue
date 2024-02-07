@@ -60,7 +60,7 @@ import Cube from "@/components/home/profile/Cube.vue";
 import { GetObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { useGtag } from "vue-gtag-next";
 const runtimeConfig = useRuntimeConfig().public;
-const { gtag } = useGtag();
+const { event } = useGtag();
 
 const objectURL = ref<string>("");
 const client = new S3Client({
@@ -102,14 +102,14 @@ onMounted(async () => {
 const scroll = (refName: string) => {
   const element = document.getElementById(refName);
   element?.scrollIntoView({ behavior: "smooth", block: "start" });
-  gtag("event", "click", {
+  event("event", "click", {
     event_category: "scroll",
     event_label: refName,
   });
 };
 
 const sendEvent = () => {
-  gtag("event", "click", {
+  event("event", "click", {
     event_category: "download",
   });
 };

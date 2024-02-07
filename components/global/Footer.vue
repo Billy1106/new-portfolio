@@ -58,7 +58,7 @@
 
 <script setup>
 import { useGtag } from "vue-gtag-next";
-const { gtag } = useGtag();
+const { event } = useGtag();
 const scroll = (refName) => {
   const element = document.getElementById(refName);
   element.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -66,7 +66,7 @@ const scroll = (refName) => {
 };
 
 const sendEvent = (refName) => {
-  gtag("event", "click", {
+  event("click", {
     event_category: "Footer",
     event_label: refName,
   });
