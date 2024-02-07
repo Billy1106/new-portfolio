@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   },
   css: ["@/assets/main.scss"],
   ssr: true,
-  modules: ['nuxt-gtag'],
+  modules: ["nuxt-gtag"],
   runtimeConfig: {
     public: {
       AWS_S3_ACCESS_ID: process.env.S3_ACCESS_ID,
@@ -37,9 +37,7 @@ export default defineNuxtConfig({
       AWS_S3_BUCKET_NAME: process.env.S3_BUCKET_NAME,
       AWS_S3_REGION: process.env.S3_REGION,
       AWS_S3_RESUME_KEY: process.env.S3_RESUME_KEY,
+      GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
     },
   },
-  gtag: {
-    id: process.env.GOOGLE_ANALYTICS_ID,
-  }
 });
