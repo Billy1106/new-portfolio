@@ -57,9 +57,18 @@
 </template>
 
 <script setup>
+const { gtag } = useGtag();
 const scroll = (refName) => {
   const element = document.getElementById(refName);
   element.scrollIntoView({ behavior: "smooth", block: "start" });
+  sendEvent(refName);
+};
+
+const sendEvent = (refName) => {
+  gtag("event", "click", {
+    event_category: "Footer",
+    event_label: refName,
+  });
 };
 </script>
 

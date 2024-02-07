@@ -40,6 +40,6 @@ export default defineNuxtConfig({
     },
   },
   gtag: {
-    id: 'G-LFRLS1PC1B',
+    id: process.env.GOOGLE_ANALYTICS_ID,
   }
 });
