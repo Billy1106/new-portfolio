@@ -46,12 +46,9 @@ defineComponent({
     Footer,
   },
 });
-const { event } = useGtag();
+const { pageview } = useGtag();
 onMounted(() => {
-  event("page_view", {
-    app_name: "Portfolio",
-    screen_name: "Home",
-  });
+  pageview({ page_path: "/" });
 });
 </script>
 <style scoped>
