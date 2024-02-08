@@ -34,7 +34,7 @@ import Projects from "@/components/home/Projects.vue";
 import History from "@/components/home/History.vue";
 import Profile from "@/components/home/Profile.vue";
 import Footer from "@/components/global/Footer.vue";
-import { useGtag } from "vue-gtag-next";
+import { event } from "vue-gtag";
 defineComponent({
   components: {
     Header,
@@ -46,9 +46,9 @@ defineComponent({
     Footer,
   },
 });
-const { pageview } = useGtag();
+const config = useRuntimeConfig().public;
 onMounted(() => {
-  pageview({ page_path: "/" });
+  event('clicked hoge btn');
 });
 </script>
 <style scoped>

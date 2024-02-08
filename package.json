@@ -26,6 +26,7 @@
     "@mdi/js": "^7.4.47",
     "@nuxtjs/google-gtag": "^1.0.4",
     "aws-amplify": "^6.0.13",
-    "nuxt-gtag": "^1.1.2"
+    "nuxt-gtag": "^1.1.2",
+    "vue-gtag": "^2.0.1"
   }
 }
