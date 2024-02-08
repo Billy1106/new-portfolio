@@ -38,6 +38,9 @@ export default defineNuxtConfig({
       AWS_S3_REGION: process.env.S3_REGION,
       AWS_S3_RESUME_KEY: process.env.S3_RESUME_KEY,
       GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
+      EMAIL_TEMPLATE_ID: process.env.EMAIL_TEMPLATE_ID,
+      EMAIL_SERVICE_ID: process.env.EMAIL_SERVICE_ID,
+      EMAIL_USER_ID: process.env.EMAIL_USER_ID,
     },
   },
   gtag: {
