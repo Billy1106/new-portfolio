@@ -47,8 +47,14 @@ defineComponent({
   },
 });
 const config = useRuntimeConfig().public;
+const { gtag } = useGtag();
 onMounted(() => {
-  event('clicked hoge btn');
+  const evnt = event("page_view", { page_path: "/home" });
+  gtag("event", "screen_view", {
+    app_name: "My App",
+    screen_name: "Home",
+  });
+  console.log(event);
 });
 </script>
 <style scoped>
