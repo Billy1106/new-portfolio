@@ -42,7 +42,7 @@ export const projectList: Project[] = [
     id: 5,
     title: "NativeJobs",
     description:
-      "An online job search mobile application using React Native.",
+      "An online job search mobile application using React Native and FastAPI.",
     img: "/images/project/native.png",
     techs: [],
     sourceLink: "https://github.com/Billy1106/native-jobs",

@@ -1,10 +1,12 @@
 <template>
-  <v-container fluid class="about d-flex justify-center">
+  <v-container fluid class="about">
     <v-row justify="center">
-      <v-col cols="12" class="text-center">
+      <v-col class="text-center">
         <h6>Explore My</h6>
         <h1 class="pb-10">Skills</h1>
       </v-col>
+    </v-row>
+    <v-row justify="center">
       <v-col
         cols="12"
         sm="6"
@@ -12,6 +14,7 @@
         lg="3"
         v-for="tech in techList"
         :key="tech.text"
+        align-self="center"
       >
         <SkillCard
           :title="tech.text"
@@ -36,8 +39,6 @@ defineComponent({
     ExperienceCard,
   },
 });
-
-
 </script>
 
 <style scoped>

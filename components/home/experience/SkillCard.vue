@@ -8,6 +8,9 @@
       dialog = true;
       sendEvent();
     "
+    :style="{
+      height: '200px',
+    }"
   >
     <v-dialog
       v-model="dialog"

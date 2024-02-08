@@ -1,11 +1,11 @@
 <template>
-  <v-card class="text-center mx-auto pa-4" flat variant="outlined" max-width="500px" height="400px">
+  <v-card class="text-center mx-auto pa-4" flat variant="outlined">
     <v-row no-gutters>
       <v-col cols="12">
         <v-img
           :src="project.img"
           :alt="project.title"
-          height="200"
+          height="160"
           aspect-ratio="4/3"
           class="transition-fast"
           eager

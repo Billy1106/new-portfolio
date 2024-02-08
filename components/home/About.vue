@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="about">
+  <v-container fluid class="about d-flex align-center justify-center">
     <v-row justify="center">
       <v-col align-self="center">
         <v-col>
@@ -7,7 +7,7 @@
           <h1 class="text-center pb-10">About Me</h1>
         </v-col>
         <v-row>
-          <v-col cols="12" rows="12" md="4" class="my-auto">
+          <v-col cols="12" rows="12" md="4" align-self="center">
             <v-img
               src="/images/about/AI-profile.png"
               height="400"
@@ -72,7 +72,6 @@
 
 <style scoped>
 .about {
-  margin-bottom: 15rem;
   background-color: #f5f5f5;
   min-height: 100vh;
   .description-text h4 {
