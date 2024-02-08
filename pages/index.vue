@@ -34,7 +34,7 @@ import Projects from "@/components/home/Projects.vue";
 import History from "@/components/home/History.vue";
 import Profile from "@/components/home/Profile.vue";
 import Footer from "@/components/global/Footer.vue";
-import { event } from "vue-gtag";
+import { useGtag } from "vue-gtag-next";
 defineComponent({
   components: {
     Header,
@@ -46,15 +46,9 @@ defineComponent({
     Footer,
   },
 });
-const config = useRuntimeConfig().public;
-const { gtag } = useGtag();
+const { event } = useGtag();
 onMounted(() => {
-  const evnt = event("page_view", { page_path: "/home" });
-  gtag("event", "screen_view", {
-    app_name: "My App",
-    screen_name: "Home",
-  });
-  console.log(event);
+  event("page_view", { page_path: "/home" });
 });
 </script>
 <style scoped>
