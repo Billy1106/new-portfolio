@@ -28,7 +28,6 @@ export default defineNuxtConfig({
     },
   },
   css: ["@/assets/main.scss"],
-  ssr: true,
   modules: ["nuxt-gtag"],
   runtimeConfig: {
     public: {
