@@ -32,20 +32,15 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, ref, computed } from 'vue';
 import ProjectCard from "@/components/home/project/ProjectCard.vue";
-import { defineComponent, ref } from "vue";
-import {
-  projectList,
-  type Project,
-} from "@/components/home/project/project-contents";
+import { projectList, type Project } from "@/components/home/project/project-contents";
 import { useTheme } from "vuetify";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const theme = useTheme();
-defineComponent({
-  components: {
-    ProjectCard,
-  },
-});
 
 const screenWidth = ref(window?.innerWidth || 900);
 const groupedProject = ref<Project[][]>([[]]);
@@ -56,6 +51,22 @@ onMounted(() => {
     setProject();
   });
   setProject();
+
+  // アニメーションの追加
+  gsap.utils.toArray('.project').forEach(value => {
+    const card = value as Element;
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: 'top bottom-=200',
+        toggleActions: 'play none none reverse',
+      },
+      opacity: 0,
+      y: 10,
+      duration: 0.5,
+      ease: 'power.out',
+    });
+  });
 });
 
 const bgColor = computed(() => theme.current.value.colors.surface);
@@ -76,17 +87,11 @@ const setProject = () => {
   groupedProject.value = grouped;
   screenWidth.value = window.innerWidth;
 };
+
 </script>
 
 <style scoped>
 .project {
   min-height: 100vh;
-}
-
-.project-card {
-  min-height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 </style>

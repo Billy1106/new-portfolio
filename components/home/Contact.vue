@@ -82,6 +82,11 @@ import { ref } from "vue";
 import { useGtag } from "vue-gtag-next";
 const { event } = useGtag();
 import { init, send } from "emailjs-com";
+import { onMounted } from "vue";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 enum MessageType {
   SUCCESS = "success",
   ERROR = "error",
@@ -94,6 +99,24 @@ const message = ref("");
 const name = ref("");
 const email = ref("");
 const errorMessage = ref("");
+
+onMounted(() => {
+  gsap.utils.toArray(".contact .v-card, v-img, .contact h6, .contact h1, .contact .description-text h4, .contact v-img").forEach((value) => {
+    const card = value as Element;
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: "top 100%",
+        end: "bottom 60%",
+        toggleActions: "play none none reverse",
+      },
+      opacity: 0,
+      y: 30,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  });
+});
 
 const contentCheck = () => {
   if (name.value === "" || email.value === "" || message.value === "") {

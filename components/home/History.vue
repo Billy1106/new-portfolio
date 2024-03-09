@@ -28,6 +28,10 @@
 <script setup lang="ts">
 import HistoryCard from "@/components/home/history/HistoryCard.vue";
 import { defineComponent } from "vue";
+import { onMounted } from "vue";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 interface Event {
   id: number;
@@ -41,6 +45,23 @@ defineComponent({
   components: {
     HistoryCard,
   },
+});
+onMounted(() => {
+  gsap.utils.toArray(".history .v-card, v-img, .history h6, .history h1, .history .description-text h4, .project v-img").forEach((value) => {
+    const card = value as Element;
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: "top 100%",
+        end: "bottom 60%",
+        toggleActions: "play none none reverse",
+      },
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      ease: "power2.out",
+    });
+  });
 });
 const eventLists: Event[] = [
   {

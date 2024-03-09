@@ -10,17 +10,17 @@
           <h6 class="text-center">Get To Know More</h6>
           <h1 class="text-center pb-10">About Me</h1>
         </v-col>
-        <v-row >
+        <v-row>
           <!-- <v-col align-self="center" style="height: 70vh; scale: 0.7;"> -->
           <v-col align-self="center">
             <v-img
-                src="/images/about/AI-profile.png"
-                height="400"
-                width="300"
-                class="mx-auto"
-                cover
-                eager
-              />
+              src="/images/about/AI-profile.png"
+              height="400"
+              width="300"
+              class="mx-auto"
+              cover
+              eager
+            />
             <!-- <client-only>
               <Vue3Spline
                 :scene="{
@@ -83,6 +83,34 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useTheme } from "vuetify";
+import { onMounted } from "vue";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  gsap.utils.toArray('.about .v-card, v-img, .about h6, .about h1, .about .description-text h4, .project v-img').forEach(value => {
+    const element = value as Element;
+
+    gsap.fromTo(element, {
+      opacity: 0,
+      y: 30,
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 90%', 
+        end: 'bottom 60%', // 要素のボトムがビューポートの60%に達したときに終了
+        toggleActions: 'play none none reverse', // スクロールダウンでプレイ、スクロールアップでリバース
+      },
+    });
+  });
+});
+
+
 const theme = useTheme();
 
 const bgColor = computed(() => theme.current.value.colors.surface);
@@ -94,5 +122,12 @@ const bgColor = computed(() => theme.current.value.colors.surface);
   .description-text h4 {
     font-weight: 600;
   }
+}
+.about h6,
+.about h1,
+.about v-img,
+.about .v-card,
+.about .description-text h4 {
+  opacity: 0;
 }
 </style>

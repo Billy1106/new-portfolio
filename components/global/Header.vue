@@ -79,7 +79,7 @@ const currentTheme = computed(() => (darkMode.value ? "dark" : "light"));
 }
 
 .header .button {
-  font-size: 20px;
+  font-size: 17px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   color: var(--text-color);
