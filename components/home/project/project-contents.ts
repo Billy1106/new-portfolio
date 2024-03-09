@@ -103,7 +103,7 @@ export const projectList: Project[] = [
     description: "My current portfolio website created by using Nuxt3.js.",
     img: "/images/project/new-portfolio.png",
     techs: [],
-    sourceLink: "https://main.d1uyzpfa3abnrd.amplifyapp.com/",
-    demoLink: "https://billy1106.github.io/portfolio/",
+    sourceLink: "https://billy1106.github.io/portfolio",
+    demoLink: "https://main.d1uyzpfa3abnrd.amplifyapp.com",
   },
 ];

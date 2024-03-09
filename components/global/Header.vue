@@ -60,6 +60,8 @@
 <script setup>
 import { useTheme } from "vuetify";
 import { ref, computed } from "vue";
+import useScroll from "@/composables/useScroll";
+const {scroll} = useScroll();
 const theme = useTheme();
 const drawer = ref(false);
 const darkMode = ref(false);

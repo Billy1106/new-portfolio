@@ -2,6 +2,7 @@ function useScroll() {
   const currentSection = ref("home");
 
   const scroll = (refName: string) => {
+    console.log(refName);
     if (refName === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
