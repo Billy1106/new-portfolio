@@ -91,7 +91,7 @@ const sendEvent = () => {
 .card-content p {
   font-weight: 500;
   font-size: medium;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 8px;
   text-align: left;
 }

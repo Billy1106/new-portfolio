@@ -8,7 +8,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     dark: false,
     colors: {
       background: "#FFFFFF",
-      surface: "#F0F0F0",
+      surface: "#FFFFFF", //F0F0F0
       primary: "#000000",
       secondary: "#FFFFFF",
       error: "#FF3737",
