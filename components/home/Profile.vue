@@ -1,50 +1,59 @@
 <template>
-  <v-container fluid id="profile" class="profile">
+  <v-container fluid class="profile d-flex align-center justify-center">
     <v-row justify="center">
-      <v-col cols="12" md="4" class="text-center" align-self="center">
+      <v-col cols="12" class="text-center">
         <v-row justify="center" class="my-16">
-          <Cube class="my-5" />
+          <Cube class="my-10" />
         </v-row>
         <v-row justify="center">
-          <h4>Hello, I'm</h4>
+          <v-col class="text-center">
+            <h4>Hello, I'm</h4>
+          </v-col>
         </v-row>
         <v-row justify="center">
-          <h1>Ryota Koda</h1>
+          <v-col class="text-center">
+            <h1>Ryota Koda</h1>
+          </v-col>
         </v-row>
         <v-row justify="center">
-          <h3>Software Engineer</h3>
+          <v-col class="text-center">
+            <h3>Software Engineer</h3>
+          </v-col>
         </v-row>
-        <v-row justify="center" class="ga-6">
-          <v-btn
-            :href="objectURL"
-            target="_blank"
-            text="Download CV"
-            variant="outlined"
-            @click="sendEvent"
-          />
-          <v-btn
-            variant="tonal"
-            text="Contact Info"
-            @click="scroll('contact')"
-          />
+        <v-row justify="space-around">
+          <v-col cols="auto">
+            <v-btn
+              :href="objectURL"
+              target="_blank"
+              variant="outlined"
+              @click="sendEvent"
+            >
+              Download CV
+            </v-btn>
+            <v-btn variant="tonal" @click="scroll('contact')">
+              Contact Info
+            </v-btn>
+          </v-col>
         </v-row>
         <v-row justify="center">
-          <v-col cols="12" md="2">
+          <v-col cols="auto">
             <v-btn
               flat
-              size="50"
+              icon
               href="https://github.com/Billy1106/"
               target="_blank"
+              color="transparent"
             >
               <v-icon size="50">mdi-github</v-icon>
             </v-btn>
           </v-col>
-          <v-col cols="12" md="2">
+          <v-col cols="auto">
             <v-btn
               flat
-              size="50"
+              icon
               href="https://www.linkedin.com/in/ryota-koda-1a970521b/"
               target="_blank"
+              color="transparent"
             >
               <v-icon size="50">mdi-linkedin</v-icon>
             </v-btn>

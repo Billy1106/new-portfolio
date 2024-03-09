@@ -1,48 +1,34 @@
 <template>
-  <v-container fluid class="project">
-    <v-row justify="center">
-      <v-col>
-        <h6 class="text-center">Browse My Recent</h6>
-        <h1 class="text-center">Projects</h1>
-      </v-col>
-    </v-row>
-    <v-row justify="center">
-      <v-window hide-delimiter-background show-arrows>
-        <template v-slot:prev="{ props }">
-          <v-btn variant="outlined" class="rounded-pill" @click="props.onClick"
-            ><</v-btn
-          >
-        </template>
-        <template v-slot:next="{ props }">
-          <v-btn variant="outlined" class="rounded-pill" @click="props.onClick"
-            >></v-btn
-          >
-        </template>
-        <v-window-item
-          v-for="(group, index) in groupedProject"
-          :key="'group-' + index"
-          :style="{
-            minHeight: '800px',
-            width: '80vw',
-          }"
-        >
-          <v-row class="mx-auto" justify="center">
-            <v-col
-              cols="12"
-              md="6"
-              lg="6"
-              xl="6"
-              v-for="(project, projIndex) in group"
-              :key="'project-' + projIndex"
-              align-self="center"
-            >
-              <ProjectCard :project="project" />
-            </v-col>
-          </v-row>
-        </v-window-item>
-      </v-window>
-    </v-row>
-  </v-container>
+  <v-container fluid class="project" :style="{ backgroundColor: bgColor }">
+  <v-row justify="center" class="py-5">
+    <v-col>
+      <h6 class="text-center subtitle-1">Browse My Recent</h6>
+      <h1 class="text-center display-1">Projects</h1>
+    </v-col>
+  </v-row>
+  <v-row justify="center">
+    <v-window hide-delimiter-background show-arrows class="project-window">
+      <template v-slot:prev="{ props }">
+        <v-btn icon large color="surface" class="project-nav-btn" @click="props.onClick">
+          <v-icon>mdi-chevron-left</v-icon>
+        </v-btn>
+      </template>
+      <template v-slot:next="{ props }">
+        <v-btn icon large color="surface" class="project-nav-btn" @click="props.onClick">
+          <v-icon>mdi-chevron-right</v-icon>
+        </v-btn>
+      </template>
+      <v-window-item v-for="(group, index) in groupedProject" :key="'group-' + index" class="project-window-item">
+        <v-row class="mx-auto" justify="space-around">
+          <v-col cols="12" md="6" v-for="(project, projIndex) in group" :key="'project-' + projIndex" align-self="center">
+            <ProjectCard :project="project" />
+          </v-col>
+        </v-row>
+      </v-window-item>
+    </v-window>
+  </v-row>
+</v-container>
+
 </template>
 
 <script setup lang="ts">
@@ -52,6 +38,9 @@ import {
   projectList,
   type Project,
 } from "@/components/home/project/project-contents";
+import { useTheme } from "vuetify";
+
+const theme = useTheme();
 defineComponent({
   components: {
     ProjectCard,
@@ -68,6 +57,8 @@ onMounted(() => {
   });
   setProject();
 });
+
+const bgColor = computed(() => theme.current.value.colors.surface);
 
 const setProject = () => {
   let perGroup;
@@ -89,7 +80,6 @@ const setProject = () => {
 
 <style scoped>
 .project {
-  background-color: #f5f5f5;
   min-height: 100vh;
 }
 

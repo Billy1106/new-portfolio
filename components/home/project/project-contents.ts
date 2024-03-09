@@ -90,11 +90,20 @@ export const projectList: Project[] = [
   },
   {
     id: 0,
-    title: "Portfolio",
+    title: "Portfolio1.0",
     description: "My first portfolio website created by using React.js.",
     img: "/images/project/my-portfolio.jpg",
     techs: [],
     sourceLink: "https://github.com/Billy1106/portofolio",
+    demoLink: "https://billy1106.github.io/portfolio/",
+  },
+  {
+    id: 8,
+    title: "Portfolio2.0",
+    description: "My current portfolio website created by using Nuxt3.js.",
+    img: "/images/project/new-portfolio.png",
+    techs: [],
+    sourceLink: "https://main.d1uyzpfa3abnrd.amplifyapp.com/",
     demoLink: "https://billy1106.github.io/portfolio/",
   },
 ];

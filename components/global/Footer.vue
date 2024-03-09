@@ -2,34 +2,28 @@
   <div>
     <v-footer flat class="footer">
       <v-row class="mx-15">
-        <v-row justify="center">
+        <v-row justify="center" class="pt-6">
           <v-col cols="12" md="2" class="text-center">
-            <v-btn flat @click="scroll('home')" class="text-black button"
-              >Home</v-btn
-            >
+            <v-btn variant="text" flat @click="scroll('home')" class="button">Home</v-btn>
           </v-col>
           <v-col cols="12" md="2" class="text-center">
-            <v-btn flat @click="scroll('about')" class="text-black button"
-              >About</v-btn
-            >
+            <v-btn variant="text" flat @click="scroll('about')" class="button">About</v-btn>
           </v-col>
           <v-col cols="12" md="2" class="text-center">
-            <v-btn flat @click="scroll('skills')" class="text-black button"
-              >Skills</v-btn
-            >
+            <v-btn variant="text" flat @click="scroll('skills')" class="button">Skills</v-btn>
           </v-col>
           <v-col cols="12" md="2" class="text-center">
-            <v-btn flat @click="scroll('project')" class="text-black button"
+            <v-btn variant="text" flat @click="scroll('project')" class="button"
               >Projects</v-btn
             >
           </v-col>
           <v-col cols="12" md="2" class="text-center">
-            <v-btn flat @click="scroll('experience')" class="text-black button"
+            <v-btn variant="text" flat @click="scroll('experience')" class="button"
               >Experiences</v-btn
             >
           </v-col>
           <v-col cols="12" md="2" class="text-center">
-            <v-btn flat @click="scroll('contact')" class="text-black button"
+            <v-btn variant="text" flat @click="scroll('contact')" class="button"
               >Contact</v-btn
             >
           </v-col>
@@ -51,7 +45,6 @@ const { scroll } = useScroll();
 <style scoped>
 .footer {
   .button {
-    color: #000000;
     font-size: 15px;
     font-family: "Poppins", sans-serif;
     font-weight: 600;

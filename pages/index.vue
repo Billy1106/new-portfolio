@@ -1,5 +1,5 @@
 <template>
-  <v-app class="home">
+  <v-app class="home" color="primary">
     <Header class="header" />
     <v-main>
       <div id="home"><Profile /></div>
@@ -48,8 +48,6 @@ onMounted(() => {
   event("page_view", { page_path: "/home" });
 });
 
-
-
 </script>
 
 <style scoped>
@@ -60,4 +58,5 @@ onMounted(() => {
     padding: 50px;
   }
 }
+
 </style>

@@ -82,9 +82,6 @@ const sendEvent = () => {
   cursor: pointer;
 }
 
-.card:hover {
-  background-color: #f5f5f5;
-}
 
 .card-title {
   font-weight: bold;

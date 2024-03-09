@@ -7,7 +7,7 @@ function useScroll() {
       return;
     }
     const element = document.getElementById(refName);
-    element?.scrollIntoView({ behavior: "smooth", block: "start" });
+    element?.scrollIntoView({ behavior: "smooth", block: "start"});
   };
 
   const scrollToNextSection = () => {

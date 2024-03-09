@@ -1,7 +1,7 @@
 <template>
   <v-container
     fluid
-    class="contact d-flex align-center justify-center"
+    class="contact d-flex align-center justify-center "
     id="contact"
   >
     <v-row justify="center">

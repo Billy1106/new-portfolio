@@ -1,25 +1,27 @@
 <template>
-  <v-container fluid class="history" id="experience">
-    <h6 class="text-center">Explore My</h6>
-    <h1 class="text-center pb-10">Experience</h1>
-    <v-timeline direction="vertical" side="end" class="overflow-hidden ml-n9">
-      <v-timeline-item
-        v-for="(event, index) in eventLists"
-        :key="index"
-        :color="index % 2 === 0 ? 'primary' : 'secondary'"
-      >
-        <v-card flat>
-          <v-card-title>
-            <h4>{{ event.organization }}</h4>
-          </v-card-title>
-          <v-card-text>
-            <h3 class="my-1">{{ event.position }}</h3>
-            <h5 class="my-1">{{ event.date }}</h5>
-            <p class="my-2">{{ event.description }}</p>
-          </v-card-text>
-        </v-card>
-      </v-timeline-item>
-    </v-timeline>
+  <v-container fluid class="history d-flex" id="experience">
+    <v-col align-self="center">
+      <h6 class="text-center">Explore My</h6>
+      <h1 class="text-center pb-10">Experience</h1>
+      <v-timeline direction="vertical" side="end" class="overflow-hidden ml-n9">
+        <v-timeline-item
+          v-for="(event, index) in eventLists"
+          :key="index"
+          :color="index % 2 === 0 ? 'primary' : 'secondary'"
+        >
+          <v-card flat>
+            <v-card-title>
+              <h4>{{ event.organization }}</h4>
+            </v-card-title>
+            <v-card-text>
+              <h3 class="my-1">{{ event.position }}</h3>
+              <h5 class="my-1">{{ event.date }}</h5>
+              <p class="my-2">{{ event.description }}</p>
+            </v-card-text>
+          </v-card>
+        </v-timeline-item>
+      </v-timeline>
+    </v-col>
   </v-container>
 </template>
 

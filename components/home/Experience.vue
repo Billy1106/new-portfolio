@@ -1,5 +1,6 @@
 <template>
-  <v-container fluid class="about">
+  <v-container fluid class="about d-flex">
+    <v-col align-self="center">
     <v-row justify="center">
       <v-col class="text-center">
         <h6>Explore My</h6>
@@ -26,6 +27,7 @@
         />
       </v-col>
     </v-row>
+    </v-col>
   </v-container>
 </template>
 
@@ -46,5 +48,6 @@ defineComponent({
   width: 80vw;
   font-weight: 560;
   min-height: 100vh;
+
 }
 </style>
