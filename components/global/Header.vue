@@ -13,9 +13,6 @@
       <v-spacer></v-spacer>
 
       <div class="d-none d-md-flex">
-        <v-btn text @click="scroll('home')" class="text-black button"
-          >Home</v-btn
-        >
         <v-btn text @click="scroll('about')" class="text-black button"
           >About</v-btn
         >
