@@ -20,7 +20,7 @@
       </template>
       <v-window-item v-for="(group, index) in groupedProject" :key="'group-' + index" class="project-window-item">
         <v-row class="mx-auto" justify="space-around">
-          <v-col cols="12" md="6" v-for="(project, projIndex) in group" :key="'project-' + projIndex" align-self="center">
+          <v-col cols="12" md="3" v-for="(project, projIndex) in group" :key="'project-' + projIndex" align-self="center">
             <ProjectCard :project="project" />
           </v-col>
         </v-row>

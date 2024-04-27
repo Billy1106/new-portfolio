@@ -1,14 +1,16 @@
 <template>
-  <div class="scene">
-    <div class="cube" :style="cubeStyle">
-      <div class="cube-face front" :style="style"></div>
-      <div class="cube-face back" :style="style"></div>
-      <div class="cube-face right" :style="style"></div>
-      <div class="cube-face left" :style="style"></div>
-      <div class="cube-face top" :style="style"></div>
-      <div class="cube-face bottom" :style="style"></div>
+  <v-container class="mb-12">
+    <div class="scene">
+      <div class="cube" :style="cubeStyle">
+        <div class="cube-face front" :style="style"></div>
+        <div class="cube-face back" :style="style"></div>
+        <div class="cube-face right" :style="style"></div>
+        <div class="cube-face left" :style="style"></div>
+        <div class="cube-face top" :style="style"></div>
+        <div class="cube-face bottom" :style="style"></div>
+      </div>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script setup lang="ts">
@@ -29,11 +31,11 @@ const style = computed(() =>
   isDark.value
     ? {
         backgroundColor: theme.themes.value.dark.colors.background,
-        border: `1px solid white`
+        border: `1px solid white`,
       }
     : {
         backgroundColor: theme.themes.value.light.colors.background,
-        border: `1px solid black`
+        border: `1px solid black`,
       }
 );
 
